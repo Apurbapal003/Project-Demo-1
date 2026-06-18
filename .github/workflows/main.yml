@@ -1,0 +1,23 @@
+name: Simple CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository code so the server can access it
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      # Step 2: Run a simple echo command to simulate a build
+      - name: Print status message
+        run: echo "Pipeline is running successfully!"
+
+      # Step 3: List the files to verify it can see your Demo files
+      - name: List files in repository
+        run: ls -la
